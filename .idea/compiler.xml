@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jenkins-devops" />
+        <module name="jenkin-devops-microservice" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jenkin-devops-microservice" options="-parameters" />
       <module name="jenkins-devops" options="-parameters" />
     </option>
   </component>
