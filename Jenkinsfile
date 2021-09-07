@@ -1,8 +1,10 @@
 pipeline {
-    agent any
+//    agent any
+    agent { docker { image 'maven:3.6.3'} } // where to build
     stages {
         stage('Build') {
             steps {
+                sh 'mvn --version'
                 echo "Build"
             }
         }
@@ -14,10 +16,10 @@ pipeline {
          stage('Integration Test') {
              steps {
                 echo "Integration Test"
-             }        
+             }
          }
     }
-    
+
      post {
         always {
             echo "awesome i run always"
