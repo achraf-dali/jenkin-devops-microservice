@@ -1,6 +1,8 @@
+//Scripted
+ 
+//Declarative
 pipeline {
-//    agent any
-    agent { docker { image 'maven:3.6.3'} } // where to build
+    agent { docker { image 'maven:3.6.3' } }
     stages {
         stage('Build') {
             steps {
@@ -8,27 +10,26 @@ pipeline {
                 echo "Build"
             }
         }
-         stage('test') {
-             steps {
-                echo "test"
-             }
-         }
-         stage('Integration Test') {
-             steps {
+        stage('Test') {
+            steps {
+                echo "Test"
+            }
+        }
+        stage('Integration Test') {
+            steps {
                 echo "Integration Test"
-             }
-         }
-    }
-
-     post {
+            }
+        } 
+    } 
+    post {
         always {
-            echo "awesome i run always"
+            echo 'Im awesome. I run always'
         }
         success {
-            echo "i run when you success"
+            echo 'I run when you are successful'
         }
         failure {
-            echo "i run when you fail"
+            echo 'I run wehn you fail'
         }
     }
 }
