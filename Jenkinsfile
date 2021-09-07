@@ -17,16 +17,4 @@ pipeline {
              }        
          }
     }
-
-     post {
-        always {
-            echo "awesome i run always"
-        }
-        success {
-            echo "i run when you fail"
-        }
-        failure {
-            echo "i run when you fail"
-        }
-    }
 }
